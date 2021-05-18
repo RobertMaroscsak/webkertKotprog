@@ -1,0 +1,33 @@
+<mat-toolbar color="warn">
+    <mat-toolbar-row>
+        <a mat-button (click)="select('')">
+            Home
+            <mat-icon>home</mat-icon>
+        </a>
+        <!-- a ts-ben megírt select() fogja a database-ben létrehozott item.value alapján az oldalak közötti navigációt lebonyolítani: -->
+        <button mat-button *ngFor="let item of categories" (click)="select(item.value)">
+            {{item.title}}&nbsp;
+            <mat-icon>{{item.icon}}</mat-icon>
+        </button>
+        <span style="flex: 1 1;"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+            Feles Elek&nbsp; 
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="callSelectPage.emit('user')">
+                <mat-icon>person</mat-icon>
+                <span>Profil</span>
+            </button>
+            <button mat-menu-item disabled>
+                <mat-icon>settings</mat-icon>
+                <span>Beállíátsok</span>
+            </button>
+            <button mat-menu-item (click)="callSelectPage.emit('')">
+                <mat-icon>arrow_back</mat-icon>
+                <span>Kijelentkezés</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

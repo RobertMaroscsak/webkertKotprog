@@ -1,0 +1,44 @@
+<span [ngSwitch]="page">
+
+  <span *ngSwitchCase="'home'">
+    <!-- Az első a menü listát tölti be a nav.html-ben használt ngFor segítségével outputként, 
+      a második inputként kb ilyen clickListener módjára a category, azaz a menü pagek közötti kommunikációt valsítja meg,
+      a 3. pedig a jobb felső sarokban lévő kijelentkezést-->
+    <app-nav [categories]="categories" (callSelectC)="onSelect($event)" (callSelectPage)="page = $event"></app-nav>
+    <span [ngSwitch]="category">
+
+      <span *ngSwitchCase="'buy'" class="container">
+        <app-buy></app-buy>
+      </span>
+
+      <span *ngSwitchCase="'favorite'" class="container">
+        <app-favorite></app-favorite>
+      </span>
+
+      <span *ngSwitchCase="'cart'" class="container">
+        <app-cart></app-cart>
+      </span>
+      <span *ngSwitchDefault class="container">
+        <div class="centering">
+          <mat-card>
+            <h1 class="welcome">Üdvözöljük weboldalunkon!</h1>
+          </mat-card>
+        </div>
+        <div id="mozgo1">
+      </div>
+      </span>
+    </span>
+  </span>
+
+  <span *ngSwitchCase="'registration'">
+    <app-registration (callSelectPage)="page = $event"></app-registration>
+  </span>
+
+  <span *ngSwitchCase="'user'">
+    <app-user (callSelectPage)="page = $event"></app-user>
+  </span>
+
+  <span *ngSwitchDefault>
+    <app-login (callSelectPage)="page = $event"></app-login>
+  </span>
+</span>

@@ -1,0 +1,11 @@
+[mat-button] {
+    text-transform: capitalize;
+}
+
+[mat-button]:not(last-child) {
+    margin-right: 55px;
+}
+
+a[mat-button] {
+    font-size: xx-large;
+}

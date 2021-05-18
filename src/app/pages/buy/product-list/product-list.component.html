@@ -1,0 +1,50 @@
+<mat-card class="matcard">
+  <table id="table" class="table">
+    <thead>
+      <th>Név</th>
+      <th>Kép</th>
+      <th>Leírás</th>
+      <th>Ár</th>
+      <th></th>
+    </thead>
+    <tbody style="color: white;">
+      <tr *ngFor="let product of list">
+        <td (click)="onEdit(product)">{{product.name}}</td>
+        <td (click)="onEdit(product)">
+          <mat-card class="img">
+            <img mat-card-image src="{{product.href}}" alt="termékek">
+          </mat-card>
+        </td>
+        <td (click)="onEdit(product)">{{product.description}}</td>
+        <td (click)="onEdit(product)">{{product.prise}} Ft</td>
+        <td class="trash">
+          <mat-icon>
+            <a class="btn text-danger" (click)="onDelete(product.id)">
+              <span class="material-icons">
+                delete
+              </span>
+            </a>
+          </mat-icon>
+        </td>
+        <td class="heart">
+          <mat-icon>
+            <a class="btn text-danger" (click)="onHeart(product)">
+              <span class="material-icons">
+                favorite_border
+              </span>
+            </a>
+          </mat-icon>
+        </td>
+        <td class="cart">
+          <mat-icon>
+            <a class="btn text-danger" (click)="onCart(product)">
+              <span class="material-icons">
+                add_shopping_cart
+              </span>
+            </a>
+          </mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>

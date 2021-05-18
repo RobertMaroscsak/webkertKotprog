@@ -1,0 +1,25 @@
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="callSelectPage.emit('home')">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Profil</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="centering">
+  <!-- <mat-card style="margin: 4px;">
+    Date
+    <p>Today(date): {{today | date}}</p>
+  </mat-card> -->
+
+  <mat-card>
+    <!-- Attribútum direktíva: -->
+    <h2 [ngStyle]="{'color': '#ff5c33'}">Kedves felhasználónk üdvözöljük a weboldunkon!</h2>
+
+    <!-- Pipe: -->
+    <p class="centering">Today(date): {{today | date}}</p>
+
+    <mat-icon>waving_hand</mat-icon>
+  </mat-card>
+</div>

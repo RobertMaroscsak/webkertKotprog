@@ -1,0 +1,31 @@
+#table {
+    color: white;
+}
+
+tr:hover,
+td:hover {
+    color: orangered;
+}
+
+.img {
+    width: 120px;
+    height: 120px;
+}
+
+.trash
+.heart
+.cart {
+    color: red;
+    width: 30px;
+    height: 30px;
+}
+
+.matcard {
+    overflow: auto;
+}
+
+.buttonBuy {
+    position: absolute;
+    right: 10%;
+    font-size: x-large;
+}

@@ -1,0 +1,33 @@
+<h1 class="display-4">Termék feltöltése</h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+
+  <mat-form-field class="max-width">
+    <mat-label>Név</mat-label>
+    <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" matInput
+      placeholder="Pl. Telefon, Autó, Hűtő,..." required>
+    <div *ngIf="name.invalid && name.touched" class="validation-error">Ez a mező kötelező!</div>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>href</mat-label>
+    <input name="href" #href="ngModel" [(ngModel)]="service.formData.href" class="form-control" matInput
+      placeholder="Pl. egyRandomURL.jpg">
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Leírás</mat-label>
+    <input name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control"
+      matInput placeholder="Ez egy nagyon jó minőségű...">
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Ár</mat-label>
+    <input name="prise" #prise="ngModel" [(ngModel)]="service.formData.prise" class="form-control" matInput
+      placeholder="1000Ft">
+  </mat-form-field>
+
+  <button mat-button type="submit" [disabled]="form.invalid" class="button">
+    Feltölt
+  </button>
+</form>
